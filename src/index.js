@@ -1,30 +1,25 @@
 import Phaser from 'phaser';
-import BootScene from './Scenes/BootScene';
-import PreloaderScene from './Scenes/PreloaderScene';
-import TitleScene from './Scenes/TitleScene';
-import GameScene from './Scenes/GameScene';
-import OptionsScene from './Scenes/OptionsScene';
-
-const config = {
+import SceneMainMenu from './Scenes/SceneMainMenu';
+import SceneMain from './Scenes/SceneMain';
+import SceneGameOver from './Scenes/SceneGameOver'
+let config = {
   type: Phaser.WEBGL,
-  width: 840,
+  width: 480,
   height: 640,
-  backgroundColor: 'black',
+  backgroundColor: "black",
   physics: {
-    default: 'arcade',
+    default: "arcade",
     arcade: {
-      gravity: { x: 0, y: 0 },
-    },
+      gravity: { x: 0, y: 0 }
+    }
   },
   scene: [
-    BootScene,
-    PreloaderScene,
-    TitleScene,
-    GameScene,
-    OptionsScene
+    SceneMainMenu,
+    SceneMain,
+    SceneGameOver
   ],
   pixelArt: true,
-  roundPixels: true,
+  roundPixels: true
 };
 
-window.game = new Phaser.Game(config);
+let game = new Phaser.Game(config);
