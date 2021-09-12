@@ -3,6 +3,7 @@ import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import GameScene from './Scenes/GameScene';
+import OptionsScene from './Scenes/OptionsScene';
 
 const config = {
   type: Phaser.WEBGL,
@@ -20,6 +21,7 @@ const config = {
     PreloaderScene,
     TitleScene,
     GameScene,
+    OptionsScene
   ],
   pixelArt: true,
   roundPixels: true,
