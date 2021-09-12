@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
   entry: {
     app: './src/index.js'
@@ -31,16 +32,22 @@ module.exports = {
       }
     ],
   },
+   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    }),
+    new webpack.DefinePlugin({
+      'typeof CANVAS_RENDERER': JSON.stringify(true),
+      'typeof WEBGL_RENDERER': JSON.stringify(true),
+    }),
+   
+  ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),
   },
-
-  plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'index.html'),
-        to: path.resolve(__dirname, 'build')
-      }
-    ])
-  ]
 };
