@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import BootScene from './Scenes/BootScene'
 import PreloaderScene from './Scenes/PreloaderScene';
+import TitleScene from './Scenes/TitleScene';
 import SceneMain from './Scenes/SceneMain';
 import SceneGameOver from './Scenes/SceneGameOver'
 let config = {
@@ -17,6 +18,7 @@ let config = {
   scene: [
     BootScene,
     PreloaderScene,
+    TitleScene,
     SceneMain,
     SceneGameOver
   ],
