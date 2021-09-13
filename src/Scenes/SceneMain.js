@@ -76,8 +76,8 @@ export default class SceneMain extends Phaser.Scene {
     };
 
     this.backgrounds = [];
-    for (var i = 0; i < 5; i++) { // create five scrolling backgrounds
-      var bg = new ScrollingBackground(this, "sprBg0", i * 10);
+    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+      let bg = new ScrollingBackground(this, "sprBg0", i * 10);
       this.backgrounds.push(bg);
     }
 
@@ -101,8 +101,8 @@ export default class SceneMain extends Phaser.Scene {
 
       this.time.addEvent({
       delay: 1000,
-      callback: function() {
-        var enemy = null;
+      callback: () => {
+        let enemy = null;
 
       if (Phaser.Math.Between(0, 10) >= 3) {
       enemy = new GunShip(
@@ -143,7 +143,7 @@ export default class SceneMain extends Phaser.Scene {
     loop: true
     });
    
-    this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
+    this.physics.add.collider(this.playerLasers, this.enemies, (playerLaser, enemy)=> {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
@@ -154,7 +154,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     });
 
-    this.physics.add.overlap(this.player, this.enemies, function(player, enemy) {
+    this.physics.add.overlap(this.player, this.enemies,(player, enemy) =>{
       if (!player.getData("isDead") &&
           !enemy.getData("isDead")) {
         player.explode(false);
@@ -163,7 +163,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     });
 
-    this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) {
+    this.physics.add.overlap(this.player, this.enemyLasers, (player, laser) =>{
       if (!player.getData("isDead") &&
           !laser.getData("isDead")) {
         player.explode(false);
@@ -175,9 +175,9 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   getEnemiesByType(type) {
-    var arr = [];
-    for (var i = 0; i < this.enemies.getChildren().length; i++) {
-      var enemy = this.enemies.getChildren()[i];
+    let arr = [];
+    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+      let enemy = this.enemies.getChildren()[i];
       if (enemy.getData("type") == type) {
         arr.push(enemy);
       }
@@ -212,8 +212,8 @@ export default class SceneMain extends Phaser.Scene {
 
 
     
-    for (var i = 0; i < this.enemies.getChildren().length; i++) {
-      var enemy = this.enemies.getChildren()[i];
+    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+      let enemy = this.enemies.getChildren()[i];
 
       enemy.update();
       if (enemy.x < -enemy.displayWidth ||
@@ -233,8 +233,8 @@ export default class SceneMain extends Phaser.Scene {
     
     }
 
-    for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
-    var laser = this.enemyLasers.getChildren()[i];
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i++) {
+    let laser = this.enemyLasers.getChildren()[i];
     laser.update();
 
     if (laser.x < -laser.displayWidth ||
@@ -247,8 +247,8 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
     
-   for (var i = 0; i < this.playerLasers.getChildren().length; i++) {
-    var laser = this.playerLasers.getChildren()[i];
+   for (let i = 0; i < this.playerLasers.getChildren().length; i++) {
+    let laser = this.playerLasers.getChildren()[i];
     laser.update();
 
     if (laser.x < -laser.displayWidth ||
@@ -261,7 +261,7 @@ export default class SceneMain extends Phaser.Scene {
     }
     }
     // You can move this to the top
-     for (var i = 0; i < this.backgrounds.length; i++) {
+     for (let i = 0; i < this.backgrounds.length; i++) {
     this.backgrounds[i].update();
     }
   }

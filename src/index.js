@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import SceneMainMenu from './Scenes/SceneMainMenu';
+import PreloaderScene from './Scenes/PreloaderScene';
 import SceneMain from './Scenes/SceneMain';
 import SceneGameOver from './Scenes/SceneGameOver'
 let config = {
@@ -14,7 +14,7 @@ let config = {
     }
   },
   scene: [
-    SceneMainMenu,
+    PreloaderScene,
     SceneMain,
     SceneGameOver
   ],
