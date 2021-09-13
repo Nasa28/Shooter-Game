@@ -7,6 +7,7 @@ export default class TitleScene extends Phaser.Scene {
   preload () {
   }
   create () {
+    
     this.add.text(2, this.game.config.height - 2,
       `PLAYER CONTROL KEYS:\n\nMOVE LEFT: [←]\n\nMOVE RIGHT: [→]\n\nMOVE DOWN: [↓]\n\nMOVE UP: [↑]\n\nSHOOT: [SPACEBAR]`)
       .setOrigin(0, 1);
@@ -21,8 +22,10 @@ export default class TitleScene extends Phaser.Scene {
 
     this.sfx = {
       btnOver: this.sound.add("sndBtnOver"),
-      btnDown: this.sound.add("sndBtnDown")
+      btnDown: this.sound.add("sndBtnDown"),
+      music: this.sound.add("music")
     };
+    this.sfx.music.play();
     // this.scene.start("SceneMain");
     this.btnPlay = this.add.sprite(
       this.game.config.width * 0.5,
