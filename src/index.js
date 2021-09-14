@@ -4,6 +4,7 @@ import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import SceneMain from './Scenes/SceneMain';
 import SceneGameOver from './Scenes/SceneGameOver'
+import LeaderBoard from  './Scenes/LeaderBoard'
 let config = {
   type: Phaser.WEBGL,
   width: 480,
@@ -19,6 +20,7 @@ let config = {
     BootScene,
     PreloaderScene,
     TitleScene,
+    LeaderBoard,
     SceneMain,
     SceneGameOver
   ],

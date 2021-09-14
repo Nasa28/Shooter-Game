@@ -174,6 +174,7 @@ export default class SceneMain extends Phaser.Scene {
     
   }
 
+  
   getEnemiesByType(type) {
     let arr = [];
     for (let i = 0; i < this.enemies.getChildren().length; i++) {

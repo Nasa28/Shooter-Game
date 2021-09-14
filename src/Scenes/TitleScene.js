@@ -23,39 +23,35 @@ export default class TitleScene extends Phaser.Scene {
     this.sfx = {
       btnOver: this.sound.add("sndBtnOver"),
       btnDown: this.sound.add("sndBtnDown"),
-      music: this.sound.add("music")
+      
     };
-    this.sfx.music.play();
-    // this.scene.start("SceneMain");
     this.btnPlay = this.add.sprite(
       this.game.config.width * 0.5,
-      this.game.config.height * 0.5,
-      "sprBtnPlay"
+      this.game.config.height * 0.40,
+      "play"
       
-    );
-    this.btnPlay.setInteractive();
-    this.btnPlay.on("pointerover", () => {
-    this.btnPlay.setTexture("sprBtnPlayHover"); // set the button texture to sprBtnPlayHover
-    this.sfx.btnOver.play(); // play the button over sound
-    }, this);
-    // this.btnPlay.on("pointerout", () => {
-    //   this.setTexture("sprBtnPlay");
-    // });
-
-    this.btnPlay.on("pointerdown",() =>{
-      this.btnPlay.setTexture("sprBtnPlayDown");
-      this.sfx.btnDown.play();
-    }, this)
-
-    // this.btnPlay.on("pointerup", () => {
-    //   this.setTexture("sprBtnPlay");
-    // }, this);
-
-    this.btnPlay.on("pointerup", () => {
-      this.btnPlay.setTexture("sprBtnPlay");
+    )
+    .setInteractive()
+    .on("pointerup", () => {
+      this.btnPlay.setTexture("play");
+      this.sfx.btnOver.play();
       this.scene.start("SceneMain");
     }, this);
-
+    this.gameText = this.add.text(200, 240, 'Play', { fontSize: '24px', fill: '#fff' });
+    
+    this.btnLeaderboard = this.add.sprite(
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.5,
+      'leader',
+    )
+    .setInteractive()
+    .on('pointerup', () => {
+      this.btnPlay.setTexture("leader");
+      this.sfx.btnOver.play();
+      this.scene.start('Leaderboard');
+    });
+    this.gameText = this.add.text(155, 306, 'LeaderBoard', { fontSize: '24px', fill: '#fff' });
+    
 
     this.backgrounds = [];
 for (let i = 0; i < 5; i++) {
@@ -65,6 +61,7 @@ for (let i = 0; i < 5; i++) {
   this.backgrounds.push(bg);
   
 }
+
   }
 
   update(){

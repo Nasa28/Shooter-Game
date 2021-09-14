@@ -18,35 +18,40 @@ export default class SceneGameOver extends Phaser.Scene {
 
     this.sfx = {
       btnOver: this.sound.add("sndBtnOver"),
-      btnDown: this.sound.add("sndBtnDown")
-    };
-
+      btnDown: this.sound.add("sndBtnDown"),
+      
+      
+    }; 
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
-      "sprBtnRestart"
+      "restart"
     );
 
     this.btnRestart.setInteractive();
 
-    this.btnRestart.on("pointerover", () => {
-      this.btnRestart.setTexture("sprBtnRestartHover"); // set the button texture to sprBtnPlayHover
-      this.sfx.btnOver.play(); // play the button over sound
-    }, this);
-
-    this.btnRestart.on("pointerout", () => {
-      this.setTexture("sprBtnRestart");
-    });
-
-    this.btnRestart.on("pointerdown", () => {
-      this.btnRestart.setTexture("sprBtnRestartDown");
-      this.sfx.btnDown.play();
-    }, this);
-
     this.btnRestart.on("pointerup", () => {
-      this.btnRestart.setTexture("sprBtnRestart");
+      this.btnRestart.setTexture("restart");
+      this.sfx.btnOver.play()
       this.scene.start("SceneMain");
     }, this);
+    this.gameText = this.add.text(200, 305, 'Restart', { fontSize: '24px', fill: '#fff' });
+
+    this.btnMenu = this.add.sprite(
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.7,
+      "menu"
+    );
+
+    this.btnMenu.setInteractive();
+
+    this.btnMenu.on("pointerup", () => {
+      this.btnMenu.setTexture("menu");
+      this.sfx.btnOver.play()
+      this.scene.start("TitleScene");
+    }, this);
+
+    this.gameText = this.add.text(200, 435, 'Menu', { fontSize: '24px', fill: '#fff' });
 
     this.backgrounds = [];
 for (let i = 0; i < 5; i++) {
