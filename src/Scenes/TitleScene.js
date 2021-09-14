@@ -37,7 +37,10 @@ export default class TitleScene extends Phaser.Scene {
       this.sfx.btnOver.play();
       this.scene.start("SceneMain");
     }, this);
-    this.gameText = this.add.text(200, 240, 'Play', { fontSize: '24px', fill: '#fff' });
+    this.gameText = this.add.text(
+      this.game.config.width * 0.44, 
+      this.game.config.height * 0.38, 
+      'Play', { fontSize: '24px', fill: '#fff' });
     
     this.btnLeaderboard = this.add.sprite(
       this.game.config.width * 0.5,
@@ -61,7 +64,6 @@ for (let i = 0; i < 5; i++) {
   this.backgrounds.push(bg);
   
 }
-
   }
 
   update(){

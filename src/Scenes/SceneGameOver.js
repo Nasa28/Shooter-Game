@@ -35,7 +35,9 @@ export default class SceneGameOver extends Phaser.Scene {
       this.sfx.btnOver.play()
       this.scene.start("SceneMain");
     }, this);
-    this.gameText = this.add.text(200, 305, 'Restart', { fontSize: '24px', fill: '#fff' });
+    this.gameText = this.add.text(
+      this.game.config.width * 0.4, 
+      this.game.config.height * 0.48, 'Restart', { fontSize: '24px', fill: '#fff' });
 
     this.btnMenu = this.add.sprite(
       this.game.config.width * 0.5,

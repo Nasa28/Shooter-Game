@@ -14,7 +14,7 @@ export default class SceneMain extends Phaser.Scene {
     this.load.image("sprBg0", "assets/img/sprBg0.png");
     this.load.image("sprBg0", "assets/img/sprBg0.png");
     this.load.image("sprBg1", "assets/img/sprBg1.png");
-    this.load.spritesheet("sprExplosion", "assets/img/sprExplosion.png", {
+    this.load.spritesheet("sprExplosion", "assets/img/bubble_explo4.png", {
     frameWidth: 32,
     frameHeight: 32
     });
