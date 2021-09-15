@@ -1,14 +1,21 @@
 import Phaser from 'phaser';
+import UserNameScene from './Scenes/UserNameScene';
 import BootScene from './Scenes/BootScene'
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import SceneMain from './Scenes/SceneMain';
 import SceneGameOver from './Scenes/SceneGameOver'
 import LeaderBoard from  './Scenes/LeaderBoard'
+
 let config = {
   type: Phaser.WEBGL,
   width: 480,
   height: 640,
+  parent: 'content',
+  dom: {
+    expandParent: true,
+    createContainer: true,
+  },
   backgroundColor: "black",
   physics: {
     default: "arcade",
@@ -17,6 +24,7 @@ let config = {
     }
   },
   scene: [
+    UserNameScene,
     BootScene,
     PreloaderScene,
     TitleScene,

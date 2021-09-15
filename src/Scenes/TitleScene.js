@@ -7,7 +7,6 @@ export default class TitleScene extends Phaser.Scene {
   preload () {
   }
   create () {
-    
     this.add.text(2, this.game.config.height - 2,
       `PLAYER CONTROL KEYS:\n\nMOVE LEFT: [←]\n\nMOVE RIGHT: [→]\n\nMOVE DOWN: [↓]\n\nMOVE UP: [↑]\n\nSHOOT: [SPACEBAR]`)
       .setOrigin(0, 1);
