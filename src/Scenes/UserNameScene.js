@@ -8,17 +8,16 @@ export default class UserNameScene extends Phaser.Scene {
   preload(){
       
   }
-
   create() {
-    this.userName = this.add.dom(this.game.config.width / 2)
+    this.userName = this.add.dom(this.game.config.width * 0.5)
     .createFromHTML('<input type="text" id="name" '
-      + 'placeholder="Enter your name" value="" style="font-size: 24px">');
+      +  'value="" placeholder="Enter your name" style="font-size: 24px">');
 
-
-  this.returnKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+    
+  this.submit = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
  
-  this.returnKey.on('down', (e) => {
+  this.submit.on('down', (e) => {
     const name = this.game.domContainer.querySelector('#name');
 
     if (name.value !== '') {

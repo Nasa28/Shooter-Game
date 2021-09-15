@@ -8,7 +8,7 @@ import SceneGameOver from './Scenes/SceneGameOver'
 import LeaderBoard from  './Scenes/LeaderBoard'
 
 let config = {
-  type: Phaser.WEBGL,
+  type: Phaser.AUTO,
   width: 480,
   height: 640,
   parent: 'content',
