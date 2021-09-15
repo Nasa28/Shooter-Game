@@ -13,7 +13,6 @@ let config = {
   height: 640,
   parent: 'content',
   dom: {
-    expandParent: true,
     createContainer: true,
   },
   backgroundColor: "black",
