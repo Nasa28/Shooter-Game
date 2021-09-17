@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import CreditScene from './Scenes/CreditScene';
 import UserNameScene from './Scenes/UserNameScene';
 import BootScene from './Scenes/BootScene'
 import PreloaderScene from './Scenes/PreloaderScene';
@@ -23,8 +24,9 @@ let config = {
     }
   },
   scene: [
-    UserNameScene,
     BootScene,
+    CreditScene,
+    UserNameScene,
     PreloaderScene,
     TitleScene,
     LeaderBoard,
