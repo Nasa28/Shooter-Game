@@ -34,7 +34,7 @@ this.creditsTween = this.tweens.add({
 });
 this.madeByTween = this.tweens.add({
   targets: this.madeByText,
-  y: -300,
+  y: -50,
   ease: 'Power1',
   duration: 8000,
   delay: 1000,

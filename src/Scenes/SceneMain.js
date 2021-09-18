@@ -10,6 +10,8 @@ export default class SceneMain extends Phaser.Scene {
     super({ key: "SceneMain" });
   }
 
+  
+
   preload(){
     this.load.image("sprBg0", "assets/img/sprBg0.png");
     this.load.image("sprBg0", "assets/img/sprBg0.png");
@@ -37,14 +39,25 @@ export default class SceneMain extends Phaser.Scene {
     this.load.audio("sndExplode1", "assets/audio/sndExplode1.wav");
     this.load.audio("sndLaser", "assets/audio/sndLaser.wav");
  }
+ 
 
   create() {
+
+    let score = 0;
+    let  scoreText;
+    scoreText = this.add.text(16, 16, `Score: ${score}`, {
+      fontSize: '24px',
+      fill: '#fff',
+    });
+
     this.anims.create({
       key: "sprEnemy0",
       frames: this.anims.generateFrameNumbers("sprEnemy0"),
       frameRate: 20,
       repeat: -1
     });
+
+
 
     this.anims.create({
       key: "sprEnemy2",
@@ -151,8 +164,14 @@ export default class SceneMain extends Phaser.Scene {
       
         enemy.explode(true);
         playerLaser.destroy();
+        collectStar()
       }
     });
+
+    function collectStar (){
+      score += 10;
+    scoreText.setText('Score: ' + score);
+}
 
     this.physics.add.overlap(this.player, this.enemies,(player, enemy) =>{
       if (!player.getData("isDead") &&
@@ -169,6 +188,7 @@ export default class SceneMain extends Phaser.Scene {
         player.explode(false);
         player.onDestroy();
         laser.destroy();
+       
       }
     });
     
@@ -266,6 +286,5 @@ export default class SceneMain extends Phaser.Scene {
     this.backgrounds[i].update();
     }
   }
-    
-
+  
 }

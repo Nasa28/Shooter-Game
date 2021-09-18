@@ -4,8 +4,9 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "test": "jest --env=jsdom"
-  },
+    "test": "jest --env=jsdom",
+    "start": "webpack server --mode development --open"
+    },
   "description": "Space Shooter game with Phaser and JavaScript",
   "repository": "git@github.com:Nasa28/Shooter-Game.git",
   "author": "Nasa28 <kaluchinasaagu@gmail.com>",
