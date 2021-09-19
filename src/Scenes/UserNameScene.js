@@ -17,7 +17,7 @@ export default class UserNameScene extends Phaser.Scene {
   this.submit = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
  
-  this.submit.on('down', (e) => {
+  this.submit.on('down', () => {
      window.global.user = this.game.domContainer.querySelector('#name');
 
     if (window.global.user.value !== '') {

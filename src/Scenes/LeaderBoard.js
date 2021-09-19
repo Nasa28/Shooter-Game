@@ -1,12 +1,9 @@
-
+import Phaser from "phaser";
+import { getBoard } from './api/api'
 export default class LeaderBoard extends Phaser.Scene{
    constructor() {
     super({ key: 'Leaderboard' });
-    this.id = 'Q8XS8Lw5MjG4biRqnKZG';
-  }
-
-  init() {
-    this.save= new LeaderBoard();
+    
   }
 
   create() {
@@ -28,7 +25,7 @@ export default class LeaderBoard extends Phaser.Scene{
       btnDown: this.sound.add('sndBtnDown'),
     };
 
-    this.save.getBoard().then((data) => {
+    getBoard().then((data) => {
       const sorted = data.result.sort(
         (a, b) => b.score - a.score,
       );
@@ -72,23 +69,7 @@ export default class LeaderBoard extends Phaser.Scene{
 
     this.gameText = this.add.text(200, 500, 'Menu', { fontSize: '24px', fill: '#fff' });
 
-
   }
 
-  getBoard() {
-    return fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`)
-      .then(response => response.json())
-      .catch((err) => new Error(err));
-  }
-
-  postScore(user, score) {
-    return fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'Application/json',
-      },
-      body: JSON.stringify({ user, score }),
-    }).then(response => response.json()).catch((err) => new Error(err));
-  }
 }
 
