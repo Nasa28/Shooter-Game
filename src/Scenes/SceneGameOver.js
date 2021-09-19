@@ -1,28 +1,27 @@
 // api key is Q8XS8Lw5MjG4biRqnKZG
 import Phaser from 'phaser';
 import ScrollingBackground from '../Entities/Scrolling';
-
+import LeaderBoard from './LeaderBoard';
 export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: "SceneGameOver" });
   }
 
+
+  init() {
+    this.save= new LeaderBoard();
+    
+    
+  }
+
   create() {
-    let score = 0;
-    let  scoreText;
-    scoreText = this.add.text(100, 200, `Final score: ${score}`, {
+    window.global.scoreText = this.add.text(100, 200, `Final score: ${window.global.score}`, {
       fontFamily: 'monospace',
       fontSize: 32,
       fontStyle: 'bold',
       color: '#024704',
       align: 'center'
     });
-
-        function collectStar (){
-      score += 10;
-    scoreText.setText('Final score: ' + score);
-}
-    collectStar()
 
     this.title = this.add.text(this.game.config.width * 0.5, 128, "GAME OVER", {
       fontFamily: 'monospace',
@@ -32,6 +31,10 @@ export default class SceneGameOver extends Phaser.Scene {
       align: 'center'
     });
     this.title.setOrigin(0.5);
+
+    this.save.postScore(window.global.user.value, window.global.score);
+
+    
 
     this.sfx = {
       btnOver: this.sound.add("sndBtnOver"),

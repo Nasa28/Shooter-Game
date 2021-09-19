@@ -18,9 +18,9 @@ export default class UserNameScene extends Phaser.Scene {
 
  
   this.submit.on('down', (e) => {
-    const name = this.game.domContainer.querySelector('#name');
+     window.global.user = this.game.domContainer.querySelector('#name');
 
-    if (name.value !== '') {
+    if (window.global.user.value !== '') {
       
       this.scene.start('PreloaderScene');
     }

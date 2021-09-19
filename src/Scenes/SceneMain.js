@@ -43,12 +43,17 @@ export default class SceneMain extends Phaser.Scene {
 
   create() {
 
-    let score = 0;
-    let  scoreText;
-    scoreText = this.add.text(16, 16, `Score: ${score}`, {
+    window.global.score = 0;
+     window.global.scoreText;
+    window.global.scoreText = this.add.text(16, 16, `Score: ${window.global.score}`, {
       fontSize: '24px',
       fill: '#fff',
     });
+
+    function getScores (){
+      window.global.score += 10;
+   return window.global.scoreText.setText('Score: ' + window.global.score);
+}
 
     this.anims.create({
       key: "sprEnemy0",
@@ -164,14 +169,11 @@ export default class SceneMain extends Phaser.Scene {
       
         enemy.explode(true);
         playerLaser.destroy();
-        collectStar()
+        getScores()
       }
     });
 
-    function collectStar (){
-      score += 10;
-    scoreText.setText('Score: ' + score);
-}
+    
 
     this.physics.add.overlap(this.player, this.enemies,(player, enemy) =>{
       if (!player.getData("isDead") &&

@@ -37,4 +37,8 @@ let config = {
   roundPixels: true
 };
 
+window.global = {
+  score: 0,
+  emitter: null,
+};
 let game = new Phaser.Game(config);
