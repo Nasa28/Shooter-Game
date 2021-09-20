@@ -45,6 +45,7 @@ export default class SceneMain extends Phaser.Scene {
  
 
   create() {
+    window.global.music.stop()
 
     window.global.score = 0;
      window.global.scoreText;
@@ -93,11 +94,13 @@ export default class SceneMain extends Phaser.Scene {
     this.sound.add("sndExplode0"),
     this.sound.add("sndExplode1")
     ],
-    laser: this.sound.add("sndLaser")
+    laser: this.sound.add("sndLaser", {volume: 0.3}),
     };
-
+    
+    
+    
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+    for (let i = 0; i < 5; i++) { 
       let bg = new ScrollingBackground(this, "sprBg0", i * 10);
       this.backgrounds.push(bg);
     }
@@ -164,6 +167,7 @@ export default class SceneMain extends Phaser.Scene {
     loop: true
     });
    
+    
     this.physics.add.collider(this.playerLasers, this.enemies, (playerLaser, enemy)=> {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
@@ -181,9 +185,11 @@ export default class SceneMain extends Phaser.Scene {
     this.physics.add.overlap(this.player, this.enemies,(player, enemy) =>{
       if (!player.getData("isDead") &&
           !enemy.getData("isDead")) {
+            
         player.explode(false);
         player.onDestroy();
         enemy.explode(true);
+        
       }
     });
 
@@ -234,6 +240,8 @@ export default class SceneMain extends Phaser.Scene {
         this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
         this.player.setData("isShooting", false);
       }
+    
+      
     }
 
 

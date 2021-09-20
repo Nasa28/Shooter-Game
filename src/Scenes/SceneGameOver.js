@@ -8,6 +8,8 @@ export default class SceneGameOver extends Phaser.Scene {
   }
 
   create() {
+    window.global.music.stop()
+    window.global.music.play()
     window.global.scoreText = this.add.text(100, 200, `Final score: ${window.global.score}`, {
       fontFamily: 'monospace',
       fontSize: 32,
@@ -43,6 +45,7 @@ export default class SceneGameOver extends Phaser.Scene {
     this.btnRestart.on("pointerup", () => {
       this.btnRestart.setTexture("restart");
       this.sfx.btnOver.play()
+      window.global.music.stop()
       this.scene.start("SceneMain");
     }, this);
     this.gameText = this.add.text(
@@ -60,6 +63,7 @@ export default class SceneGameOver extends Phaser.Scene {
     this.btnMenu.on("pointerup", () => {
       this.btnMenu.setTexture("menu");
       this.sfx.btnOver.play()
+      window.global.music.stop()
       this.scene.start("TitleScene");
     }, this);
 

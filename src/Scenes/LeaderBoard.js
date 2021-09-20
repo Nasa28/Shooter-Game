@@ -7,6 +7,9 @@ export default class LeaderBoard extends Phaser.Scene{
   }
 
   create() {
+
+    window.global.music.stop()
+    window.global.music.play()
     this.title = this.add.text(
       this.game.config.width * 0.5,
       70,
@@ -65,6 +68,7 @@ export default class LeaderBoard extends Phaser.Scene{
     this.btnMenu.on("pointerup", () => {
       this.btnMenu.setTexture("menu");
       this.sfx.btnOver.play()
+      window.global.music.stop()
       this.scene.start("TitleScene");
     }, this);
 

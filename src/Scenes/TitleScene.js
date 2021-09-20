@@ -18,12 +18,15 @@ export default class TitleScene extends Phaser.Scene {
       align: 'center'
     });
     this.title.setOrigin(0.5);
-
+    
     this.sfx = {
       btnOver: this.sound.add("sndBtnOver"),
       btnDown: this.sound.add("sndBtnDown"),
-      
     };
+
+    window.global.music = this.sound.add("music")
+    window.global.music.stop()
+    window.global.music.play()
     this.btnPlay = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.40,
