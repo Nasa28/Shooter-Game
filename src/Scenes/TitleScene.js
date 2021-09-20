@@ -9,7 +9,7 @@ export default class TitleScene extends Phaser.Scene {
   create () {
     this.add.text(2, this.game.config.height - 2,
       `PLAYER CONTROL KEYS:\n\nMOVE LEFT: [←]\n\nMOVE RIGHT: [→]\n\nMOVE DOWN: [↓]\n\nMOVE UP: [↑]\n\nSHOOT: [SPACEBAR]`)
-      .setOrigin(0, 1);
+      .setOrigin(-0.2, 1.3);
     this.title = this.add.text(this.game.config.width * 0.5, 128, "SPACE SHOOTER", {
       fontFamily: 'monospace',
       fontSize: 48,
@@ -52,7 +52,7 @@ export default class TitleScene extends Phaser.Scene {
       this.sfx.btnOver.play();
       this.scene.start('Leaderboard');
     });
-    this.gameText = this.add.text(155, 306, 'LeaderBoard', { fontSize: '24px', fill: '#fff' });
+    this.gameText = this.add.text(220, 306, 'LeaderBoard', { fontSize: '24px', fill: '#fff' });
     
 
     this.backgrounds = [];
