@@ -9,7 +9,7 @@ export default class LeaderBoard extends Phaser.Scene{
   create() {
     this.title = this.add.text(
       this.game.config.width * 0.5,
-      100,
+      70,
       'LEADERBOARD',
       {
         fontFamily: 'monospace',
@@ -55,7 +55,7 @@ export default class LeaderBoard extends Phaser.Scene{
 
     this.btnMenu = this.add.sprite(
       this.game.config.width * 0.5,
-      this.game.config.height * 0.8,
+      this.game.config.height * 0.9,
       "menu"
     );
 
@@ -67,7 +67,7 @@ export default class LeaderBoard extends Phaser.Scene{
       this.scene.start("TitleScene");
     }, this);
 
-    this.gameText = this.add.text(200, 500, 'Menu', { fontSize: '24px', fill: '#fff' });
+    this.gameText = this.add.text(260, 560, 'Menu', { fontSize: '24px', fill: '#fff' });
 
   }
 
