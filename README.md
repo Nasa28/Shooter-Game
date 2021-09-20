@@ -41,11 +41,11 @@ On your terminal, run
 - Enter your Username
 - Hit "Enter" on your keyboard
 - PLAYER CONTROL KEYS:
-   MOVE LEFT: [←]
-   MOVE RIGHT: [→]
-   MOVE DOWN: [↓]
-   MOVE UP: [↑]
-   SHOOT: [SPACEBAR]
+ * MOVE LEFT: [←]
+ * MOVE RIGHT: [→]
+ * MOVE DOWN: [↓]
+ * MOVE UP: [↑]
+ * SHOOT: [SPACEBAR]
 
 
 ## Live version
