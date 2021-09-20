@@ -6,13 +6,15 @@
     "build": "webpack --mode production",
     "test": "jest --env=jsdom",
     "start": "webpack server --mode development --open"
-    },
+  },
   "description": "Space Shooter game with Phaser and JavaScript",
   "repository": "git@github.com:Nasa28/Shooter-Game.git",
   "author": "Nasa28 <kaluchinasaagu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "phaser": "^3.55.2"
+    "css-loader": "^6.3.0",
+    "phaser": "^3.55.2",
+    "style-loader": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

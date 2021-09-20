@@ -7,10 +7,11 @@ import TitleScene from './Scenes/TitleScene';
 import SceneMain from './Scenes/SceneMain';
 import SceneGameOver from './Scenes/SceneGameOver'
 import LeaderBoard from  './Scenes/LeaderBoard'
+import './assets/css/styles.css'
 
 let config = {
   type: Phaser.AUTO,
-  width: 480,
+  width: 600,
   height: 640,
   parent: 'content',
   dom: {
