@@ -22,7 +22,7 @@ export default class UserNameScene extends Phaser.Scene {
 
     if (window.global.user.value !== '') {
       
-      this.scene.start('PreloaderScene');
+      this.scene.start('TitleScene');
     }
   });
   

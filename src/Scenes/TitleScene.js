@@ -23,9 +23,7 @@ export default class TitleScene extends Phaser.Scene {
       btnOver: this.sound.add("sndBtnOver"),
       btnDown: this.sound.add("sndBtnDown"),
     };
-
-    window.global.music = this.sound.add("music")
-    window.global.music.stop()
+    window.global.music = this.sound.add('music')
     window.global.music.play()
     this.btnPlay = this.add.sprite(
       this.game.config.width * 0.5,

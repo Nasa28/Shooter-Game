@@ -53,6 +53,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio("sndBtnDown", "assets/audio/sndBtnDown.wav");
     this.load.image("leader", "assets/img/blue_button02.png");
     this.load.image("menu", "assets/img/blue_button02.png");
+    this.load.image("Quit", "assets/img/blue_button02.png");
     this.load.image("play", "assets/img/blue_button01.png");
     this.load.image("restart", "assets/img/blue_button02.png");
    
@@ -61,7 +62,7 @@ export default class PreloaderScene extends Phaser.Scene {
 ready() {
   this.readyCount += 1;
   if (this.readyCount === 2) {
-    this.scene.start('TitleScene');
+    this.scene.start('CreditScene');
   }
 }
 }
