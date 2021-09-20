@@ -40,7 +40,8 @@ On your terminal, run
 - Open the game
 - Enter your Username
 - Hit "Enter" on your keyboard
-- PLAYER CONTROL KEYS:
+
+#### PLAYER CONTROL KEYS:
  * MOVE LEFT: [←]
  * MOVE RIGHT: [→]
  * MOVE DOWN: [↓]
