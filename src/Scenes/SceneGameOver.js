@@ -17,7 +17,7 @@ export default class SceneGameOver extends Phaser.Scene {
     });
     postScore(window.global.user.value, window.global.score);
 
-    this.title = this.add.text(this.game.config.width * 0.5, 128, "GAME OVER", {
+    this.title = this.add.text(this.game.config.width * 0.5, 100, "GAME OVER", {
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
@@ -46,7 +46,7 @@ export default class SceneGameOver extends Phaser.Scene {
       this.scene.start("SceneMain");
     }, this);
     this.gameText = this.add.text(
-      this.game.config.width * 0.35, 
+      this.game.config.width * 0.38, 
       this.game.config.height * 0.48, 'Play Again', { fontSize: '24px', fill: '#fff' });
 
     this.btnMenu = this.add.sprite(
@@ -63,7 +63,7 @@ export default class SceneGameOver extends Phaser.Scene {
       this.scene.start("TitleScene");
     }, this);
 
-    this.gameText = this.add.text(200, 435, 'Menu', { fontSize: '24px', fill: '#fff' });
+    this.gameText = this.add.text(260, 435, 'Menu', { fontSize: '24px', fill: '#fff' });
 
     this.backgrounds = [];
 for (let i = 0; i < 5; i++) {
