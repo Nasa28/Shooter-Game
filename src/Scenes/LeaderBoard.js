@@ -42,9 +42,10 @@ export default class LeaderBoard extends Phaser.Scene{
           {
             fontFamily: 'monospace',
             fontSize: 24,
-            fontStyle: 'bold',
-            align: 'center',
             color: '#ffffff',
+            align: 'center',
+            fontStyle: 'bold'
+           
           },
         );
         height += 50;
