@@ -294,7 +294,6 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
     }
-    // You can move this to the top
      for (let i = 0; i < this.backgrounds.length; i++) {
     this.backgrounds[i].update();
     }
