@@ -55,7 +55,22 @@ export default class TitleScene extends Phaser.Scene {
     });
     this.gameText = this.add.text(220, 306, 'LeaderBoard', { fontSize: '24px', fill: '#fff' });
     
+    this.btnQuit = this.add.sprite(
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.85,
+      "Quit"
+    );
 
+    this.btnQuit.setInteractive();
+
+    this.btnQuit.on("pointerup", () => {
+      this.btnQuit.setTexture("Quit");
+      this.sfx.btnOver.play()
+      window.global.music.stop()
+      this.scene.start("UserNameScene");
+    }, this);
+
+    this.gameText = this.add.text(260, 530, 'Quit', { fontSize: '24px', fill: '#fff' });
     this.backgrounds = [];
 for (let i = 0; i < 5; i++) {
   let keys = ["sprBg0", "sprBg1"];
