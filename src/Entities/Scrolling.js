@@ -1,4 +1,4 @@
-import * as Phaser from 'phaser';
+import Phaser from 'phaser';
 
 export default class ScrollingBackground {
   constructor(scene, key, velocityY) {

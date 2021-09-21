@@ -1,4 +1,4 @@
-import * as Phaser from 'phaser';
+import Phaser from 'phaser';
 import Entity from './Entity';
 import PlayerLaser from './PlayerLaser';
 
