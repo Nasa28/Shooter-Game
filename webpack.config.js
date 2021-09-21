@@ -1,6 +1,6 @@
 const path = require('path');
-import webpack from 'webpack';
-import CopyWebpackPlugin from 'copy-webpack-plugin'
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -36,6 +36,15 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
+        
+        {
+          from: path.resolve(
+            __dirname,
+            'dist',
+            'index.html',
+          ),
+          to: path.resolve(__dirname, 'dist'),
+        },
         {
           from: path.resolve(__dirname, 'src'),
           to: path.resolve(__dirname, 'dist'),
