@@ -45,7 +45,6 @@ export default class SceneMain extends Phaser.Scene {
     window.global.music.stop();
 
     window.global.score = 0;
-    window.global.scoreText;
     window.global.scoreText = this.add.text(16, 16, `Score: ${window.global.score}`, {
       fontSize: '24px',
       fill: '#fff',
@@ -93,7 +92,7 @@ export default class SceneMain extends Phaser.Scene {
     };
 
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i += 1) {
       const bg = new ScrollingBackground(this, 'sprBg0', i * 10);
       this.backgrounds.push(bg);
     }
@@ -184,9 +183,9 @@ export default class SceneMain extends Phaser.Scene {
 
   getEnemiesByType(type) {
     const arr = [];
-    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
-      if (enemy.getData('type') == type) {
+      if (enemy.getData('type') === type) {
         arr.push(enemy);
       }
     }
@@ -215,7 +214,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
 
       enemy.update();
@@ -233,7 +232,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (let i = 0; i < this.enemyLasers.getChildren().length; i++) {
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
 
@@ -247,7 +246,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (let i = 0; i < this.playerLasers.getChildren().length; i++) {
+    for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
       const laser = this.playerLasers.getChildren()[i];
       laser.update();
 
@@ -260,7 +259,7 @@ export default class SceneMain extends Phaser.Scene {
         }
       }
     }
-    for (let i = 0; i < this.backgrounds.length; i++) {
+    for (let i = 0; i < this.backgrounds.length; i += 1) {
       this.backgrounds[i].update();
     }
   }

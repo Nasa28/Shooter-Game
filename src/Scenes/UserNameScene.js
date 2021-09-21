@@ -5,10 +5,6 @@ export default class UserNameScene extends Phaser.Scene {
     super({ key: 'UserNameScene' });
   }
 
-  preload() {
-
-  }
-
   create() {
     this.userName = this.add.dom(this.game.config.width * 0.5)
       .createFromHTML('<input type="text" id="name" '

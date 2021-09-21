@@ -27,7 +27,7 @@ export default class CreditScene extends Phaser.Scene {
       ease: 'Power1',
       duration: 2000,
       delay: 1000,
-      onComplete() {
+      onComplete: () => {
         // eslint-disable-next-line no-unused-expressions
         this.destroy;
       },
@@ -38,7 +38,7 @@ export default class CreditScene extends Phaser.Scene {
       ease: 'Power1',
       duration: 8000,
       delay: 1000,
-      onComplete() {
+      onComplete: () => {
         // eslint-disable-next-line no-unused-expressions
         this.madeByTween.destroy;
         this.scene.start('UserNameScene');

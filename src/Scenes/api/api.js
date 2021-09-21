@@ -4,8 +4,8 @@ const getBoard = async () => {
     const endPoint = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
     const response = await fetch(endPoint);
     return await response.json();
-  } catch (err) {
-    new Error(err);
+  } catch (error) {
+    throw new Error(error);
   }
 };
 
@@ -21,7 +21,7 @@ const postScore = async (user, score) => {
 
     return await response.json();
   } catch (err) {
-    new Error(err);
+    throw new Error(err);
   }
 };
 export { getBoard, postScore };
