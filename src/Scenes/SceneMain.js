@@ -18,14 +18,14 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('sprEnemy0', 'assets/img/sprEnemy0.png', {
+    this.load.spritesheet('sprEnemy0', 'assets/img/enemy-small.png', {
       frameWidth: 16,
       frameHeight: 16,
     });
     this.load.image('sprEnemy1', 'assets/img/sprEnemy1.png');
-    this.load.spritesheet('sprEnemy2', 'assets/img/sprEnemy2.png', {
-      frameWidth: 16,
-      frameHeight: 16,
+    this.load.spritesheet('sprEnemy2', 'assets/img/white.png', {
+      frameWidth: 31,
+      frameHeight: 31,
     });
     this.load.image('sprLaserEnemy0', 'assets/img/sprLaserEnemy0.png');
     this.load.spritesheet('sprLaserPlayer', 'assets/img/laser-bolts.png', {
