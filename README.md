@@ -2,11 +2,11 @@
 
 > This is a space shooter game built with Phaser 3 and Javascript 
 
-![screenshot](/src/assets/readme1.png)
+![screenshot](/src/assets/img/readme1.png)
 
-![screenshot](/src/assets/readme2.png)
+![screenshot](/src/assets/img/readme2.png)
 
-![screenshot]("/src/assets/readme3.png)
+![screenshot]("/src/assets/img/readme3.png)
 
 ## Built With
 
