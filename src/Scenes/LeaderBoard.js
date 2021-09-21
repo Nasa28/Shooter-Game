@@ -1,15 +1,14 @@
-import Phaser from "phaser";
-import { getBoard } from './api/api'
-export default class LeaderBoard extends Phaser.Scene{
-   constructor() {
+import Phaser from 'phaser';
+import { getBoard } from './api/api';
+
+export default class LeaderBoard extends Phaser.Scene {
+  constructor() {
     super({ key: 'Leaderboard' });
-    
   }
 
   create() {
-
-    window.global.music.stop()
-    window.global.music.play()
+    window.global.music.stop();
+    window.global.music.play();
     this.title = this.add.text(
       this.game.config.width * 0.5,
       70,
@@ -33,7 +32,7 @@ export default class LeaderBoard extends Phaser.Scene{
         (a, b) => b.score - a.score,
       );
       let height = 150;
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 7; i += 1) {
         this.add.text(
           this.game.config.width * 0.25,
           height,
@@ -47,34 +46,30 @@ export default class LeaderBoard extends Phaser.Scene{
             fontSize: 24,
             color: '#ffffff',
             align: 'center',
-            fontStyle: 'bold'
-           
+            fontStyle: 'bold',
+
           },
         );
         height += 50;
       }
     })
-    .catch((err) => err);
-
+      .catch((err) => err);
 
     this.btnMenu = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.9,
-      "menu"
+      'menu',
     );
 
     this.btnMenu.setInteractive();
 
-    this.btnMenu.on("pointerup", () => {
-      this.btnMenu.setTexture("menu");
-      this.sfx.btnOver.play()
-      window.global.music.stop()
-      this.scene.start("TitleScene");
+    this.btnMenu.on('pointerup', () => {
+      this.btnMenu.setTexture('menu');
+      this.sfx.btnOver.play();
+      window.global.music.stop();
+      this.scene.start('TitleScene');
     }, this);
 
     this.gameText = this.add.text(260, 560, 'Menu', { fontSize: '24px', fill: '#fff' });
-
   }
-
 }
-

@@ -1,4 +1,3 @@
-
 import Phaser from 'phaser';
 
 export default class BootScene extends Phaser.Scene {
@@ -6,13 +5,7 @@ export default class BootScene extends Phaser.Scene {
     super({ key: 'BootScene' });
   }
 
-  preload(){
-      
-  }
-
-  
   create() {
-    
     this.scene.start('PreloaderScene');
   }
 }

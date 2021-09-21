@@ -1,15 +1,16 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
   },
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
   },
 
   module: {
@@ -18,7 +19,7 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
-      
+
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -28,11 +29,11 @@ module.exports = {
         include: path.resolve(__dirname, 'src/'),
         use: {
           loader: 'babel-loader',
-        }
-      }
+        },
+      },
     ],
   },
-   plugins: [
+  plugins: [
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -45,7 +46,7 @@ module.exports = {
       'typeof CANVAS_RENDERER': JSON.stringify(true),
       'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
-   
+
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),

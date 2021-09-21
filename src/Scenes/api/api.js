@@ -1,30 +1,27 @@
 const id = 'Q8XS8Lw5MjG4biRqnKZG';
-  const  getBoard = async () => {
-    try{
-const endPoint = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`
- const response  =  await fetch(endPoint)
- return  await response.json();
-      
-    }catch (err) {
-      new Error(err);
-    } 
+const getBoard = async () => {
+  try {
+    const endPoint = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
+    const response = await fetch(endPoint);
+    return await response.json();
+  } catch (err) {
+    new Error(err);
   }
+};
 
- const postScore = async (user, score) => {
-   try{
-   const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`, {
+const postScore = async (user, score) => {
+  try {
+    const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'Application/json',
       },
       body: JSON.stringify({ user, score }),
     });
-    
-    return  await response.json();
-      
-    } catch (err) {
-      new Error(err);
-    } 
+
+    return await response.json();
+  } catch (err) {
+    new Error(err);
   }
-  export { getBoard,postScore }
- 
+};
+export { getBoard, postScore };

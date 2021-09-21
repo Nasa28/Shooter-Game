@@ -1,15 +1,15 @@
 import Phaser from 'phaser';
 import CreditScene from './Scenes/CreditScene';
 import UserNameScene from './Scenes/UserNameScene';
-import BootScene from './Scenes/BootScene'
+import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import SceneMain from './Scenes/SceneMain';
-import SceneGameOver from './Scenes/SceneGameOver'
-import LeaderBoard from  './Scenes/LeaderBoard'
-import './assets/css/styles.css'
+import SceneGameOver from './Scenes/SceneGameOver';
+import LeaderBoard from './Scenes/LeaderBoard';
+import './assets/css/styles.css';
 
-let config = {
+const config = {
   type: Phaser.AUTO,
   width: 600,
   height: 640,
@@ -17,12 +17,12 @@ let config = {
   dom: {
     createContainer: true,
   },
-  backgroundColor: "black",
+  backgroundColor: 'black',
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
-      gravity: { x: 0, y: 0 }
-    }
+      gravity: { x: 0, y: 0 },
+    },
   },
   scene: [
     BootScene,
@@ -32,14 +32,14 @@ let config = {
     TitleScene,
     LeaderBoard,
     SceneMain,
-    SceneGameOver
+    SceneGameOver,
   ],
   pixelArt: true,
-  roundPixels: true
+  roundPixels: true,
 };
 
 window.global = {
   score: 0,
   emitter: null,
 };
-let game = new Phaser.Game(config);
+const game = new Phaser.Game(config);
