@@ -36,7 +36,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        
+
         {
           from: path.resolve(
             __dirname,

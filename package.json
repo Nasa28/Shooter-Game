@@ -13,10 +13,11 @@
   "author": "Nasa28 <kaluchinasaagu@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/eslint-parser": "^7.15.7",
     "babel-eslint": "10.x",
     "css-loader": "^6.3.0",
     "eslint-config-airbnb-base": "14.x",
-    "eslint-plugin-import": "2.x",
+    "eslint-plugin-import": "^2.24.2",
     "phaser": "^3.55.2",
     "style-loader": "^3.2.1"
   },
