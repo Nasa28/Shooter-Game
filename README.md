@@ -58,15 +58,6 @@ On your terminal, run
  [Live Version]()
 
 
-
-## Acknowledgements
-
-[Microverse](https://www.microverse.org/)
-
-[ansimuz](https://opengameart.org/content/space-ship-shooter-pixel-art-assets)
-
-[harunatsuko](https://opengameart.org/content/toy-space-background) for the background image
-
 ## Authors
 
 👨‍💻 **Kalu Chinasa Agu**
@@ -80,6 +71,17 @@ On your terminal, run
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Nasa28/Shooter-Game/issues).
+
+
+
+## Acknowledgements
+
+[Microverse](https://www.microverse.org/)
+
+[ansimuz](https://opengameart.org/content/space-ship-shooter-pixel-art-assets)
+
+[harunatsuko](https://opengameart.org/content/toy-space-background) for the background image
+
 
 ## Show your support
 
