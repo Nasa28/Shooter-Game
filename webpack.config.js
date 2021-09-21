@@ -10,6 +10,14 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
+          from: path.resolve(
+            __dirname,
+            'dist',
+            'index.html',
+          ),
+          to: path.resolve(__dirname, 'dist'),
+        },
+        {
           from: path.resolve(__dirname, 'src'),
           to: path.resolve(__dirname, 'dist'),
         },
@@ -19,27 +27,15 @@ module.exports = {
       'typeof CANVAS_RENDERER': JSON.stringify(true),
       'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
-
   ],
-
-  mode: 'development',
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js',
+    clean: true,
   },
-
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src/'),
@@ -49,13 +45,20 @@ module.exports = {
             presets: ['@babel/env'],
             targets: { node: 'current' },
             plugins: ['@babel/plugin-transform-runtime'],
+          },
         },
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
- 
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'build'),
   },
 };

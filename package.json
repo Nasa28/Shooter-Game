@@ -3,33 +3,40 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
     "test": "jest --env=jsdom",
     "eslint": "eslint .",
-    "start": "webpack server --mode development --open"
+    "build": "webpack --mode production",
+    "start": "webpack server --mode development --open --port 8080",
+    "watch": "webpack --watch"
   },
   "description": "Space Shooter game with Phaser and JavaScript",
   "repository": "git@github.com:Nasa28/Shooter-Game.git",
   "author": "Nasa28 <kaluchinasaagu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "phaser": "^3.55.2"
+    "phaser": "^3.55.2",
+    "@babel/runtime": "^7.14.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/eslint-parser": "^7.15.7",
-    "@babel/preset-env": "^7.15.6",
-    "babel-eslint": "^10.1.0",
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "babel-eslint": "10.x",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
-    "copy-webpack-plugin": "^9.0.1",
-    "css-loader": "^6.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.24.2",
-    "jest": "^27.2.1",
-    "style-loader": "^3.2.1",
-    "webpack": "^5.52.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.2.0"
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "eslint": "7.x",
+    "eslint-config-airbnb-base": "14.x",
+    "eslint-plugin-import": "2.x",
+    "jest": "^27.0.4",
+    "style-loader": "^2.0.0",
+    "stylelint": "13.x",
+    "stylelint-config-standard": "21.x",
+    "stylelint-csstree-validator": "1.x",
+    "stylelint-scss": "3.x",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }
