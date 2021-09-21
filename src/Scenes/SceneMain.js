@@ -54,8 +54,8 @@ export default class SceneMain extends Phaser.Scene {
       fill: '#fff',
     });
 
-    function getScores (){
-      window.global.score += 10;
+    const getScores = () => {
+      window.global.score += 5;
    return window.global.scoreText.setText('Score: ' + window.global.score);
 }
 
