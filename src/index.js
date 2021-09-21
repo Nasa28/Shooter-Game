@@ -10,7 +10,7 @@ import LeaderBoard from './Scenes/LeaderBoard';
 import './assets/css/styles.css';
 
 const config = {
-  type: Phaser.AUTO,
+  type: Phaser.WEBGL,
   width: 600,
   height: 640,
   parent: 'content',
