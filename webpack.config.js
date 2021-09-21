@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
@@ -36,15 +37,6 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-
-        {
-          from: path.resolve(
-            __dirname,
-            'dist',
-            'index.html',
-          ),
-          to: path.resolve(__dirname, 'dist'),
-        },
         {
           from: path.resolve(__dirname, 'src'),
           to: path.resolve(__dirname, 'dist'),
