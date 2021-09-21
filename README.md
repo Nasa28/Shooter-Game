@@ -6,7 +6,7 @@
 
 ![screenshot](/src/assets/img/readme2.png)
 
-![screenshot]("/src/assets/img/readme3.png)
+![screenshot](/src/assets/img/readme3.png)
 
 ## Built With
 
