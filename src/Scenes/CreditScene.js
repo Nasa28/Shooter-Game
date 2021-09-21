@@ -6,8 +6,14 @@ export default class CreditScene extends Phaser.Scene {
   }
 
   create() {
-    this.creditsText = this.add.text(0, 0, 'Created by:', { fontSize: '32px', fill: '#fff' });
-    this.madeByText = this.add.text(0, 0, 'Nasa', { fontSize: '40px', fill: '#fff' });
+    this.creditsText = this.add.text(0, 0, 'Created by:', { fontSize: '48px', fill: '#fff' });
+    this.madeByText = this.add.text(0, 0, 'Nasa', {
+      fontFamily: 'monospace',
+      fontSize: 48,
+      fontStyle: 'bold',
+      color: '#03fc07',
+      align: 'center',
+    });
     this.zone = this.add.zone(this.game.config.width * 0.5,
       this.game.config.height * 0.5,
       this.game.config.width,
