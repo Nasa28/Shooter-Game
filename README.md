@@ -78,9 +78,12 @@ Feel free to check the [issues page](https://github.com/Nasa28/Shooter-Game/issu
 
 [Microverse](https://www.microverse.org/)
 
-[ansimuz](https://opengameart.org/content/space-ship-shooter-pixel-art-assets) For The Enemies
+Enemies: [ansimuz](https://opengameart.org/content/space-ship-shooter-pixel-art-assets) 
 
-[harunatsuko](https://opengameart.org/content/toy-space-background) for the background image
+Enemies: [hookiz](https://opengameart.org/content/ship-space-0)
+
+
+Background Image: [harunatsuko](https://opengameart.org/content/toy-space-background)
 
 
 ## Show your support
