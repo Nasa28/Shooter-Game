@@ -6,6 +6,22 @@ module.exports = {
   entry: {
     app: './src/index.js',
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    }),
+    new webpack.DefinePlugin({
+      'typeof CANVAS_RENDERER': JSON.stringify(true),
+      'typeof WEBGL_RENDERER': JSON.stringify(true),
+    }),
+
+  ],
+
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
@@ -29,25 +45,16 @@ module.exports = {
         include: path.resolve(__dirname, 'src/'),
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env'],
+            targets: { node: 'current' },
+            plugins: ['@babel/plugin-transform-runtime'],
         },
+      },
       },
     ],
   },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src'),
-          to: path.resolve(__dirname, 'dist'),
-        },
-      ],
-    }),
-    new webpack.DefinePlugin({
-      'typeof CANVAS_RENDERER': JSON.stringify(true),
-      'typeof WEBGL_RENDERER': JSON.stringify(true),
-    }),
-
-  ],
+ 
   devServer: {
     static: path.resolve(__dirname, 'dist'),
   },
