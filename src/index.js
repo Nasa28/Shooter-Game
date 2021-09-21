@@ -43,5 +43,4 @@ window.global = {
   emitter: null,
 };
 
-// eslint-disable-next-line no-new
-new Phaser.Game(config);
+window.game = new Phaser.Game(config);
