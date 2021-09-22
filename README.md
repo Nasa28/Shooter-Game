@@ -1,6 +1,6 @@
 # Shooter-Game
 
-> This is a space shooter game built with Phaser 3 and Javascript 
+> A Space Shooter game built with Phaser 3,  Webpack 5, and JavaScript, that runs when deployed online.  The player must kill all the enemies with lasers and avoid colliding with the enemies or the enemy lasers. The key entities in the game include the player, ChaserShip, CarrierShip, and GunShip.
 
 ![screenshot](/src/assets/img/readme1.png)
 
@@ -28,16 +28,17 @@
 
 ## Getting Started
 
-To run this project locally, make sure you have the following installed:
+To run this project locally, make sure you have done the following:
 
-- Node.js, more information [here](https://nodejs.org/en/)
-- Yarn package manager, more information [here](https://yarnpkg.com/)
+- Installed Node.js, more information [here](https://nodejs.org/en/)
+- Installed Yarn package manager, more information [here](https://yarnpkg.com/)
 
-- To get a local copy up and running, on your terminal, run 
+- Gotten a copy of the project by running 
 ```
  git clone https://github.com/Nasa28/Shooter-Game.git
 
 ```
+on your terminal.
 
 ### Setup, Installations and usage
 
@@ -59,9 +60,10 @@ yarn run test
 ```
 
 ## How to play
-- Open the game
-- Enter your Username
-- Hit "Enter" on your keyboard
+- Open the game and allow it to boot
+- Enter your Username/nickname so that your score can be saved.
+- Hit "Enter" on your keyboard to continue.
+- Click on play to play the game
 
 #### PLAYER CONTROL KEYS:
  * MOVE LEFT: [←]
@@ -70,6 +72,7 @@ yarn run test
  * MOVE UP: [↑]
  * SHOOT: [SPACEBAR]
 
+[Click to read the Game Design Document for Shooter Game](GDD.md)
 
 ## Live version
 
