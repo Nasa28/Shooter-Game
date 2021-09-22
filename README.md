@@ -72,7 +72,7 @@ yarn run test
  * MOVE UP: [↑]
  * SHOOT: [SPACEBAR]
 
-[Click to read the Game Design Document for Shooter Game](GDD.md)
+[Click here to read the Game Design Document for Shooter Game](GDD.md)
 
 ## Live version
 
