@@ -16,6 +16,16 @@
 - Phaser 3
 - Jest
 
+## Design Process
+
+  At the end of day 2, I had some objectives going into day three;
+
+ * To make the game scalable and easy to play
+ * To build the core functionality of the game before adding other extra features.
+ * Implement the BootScene, PreloaderScene, TitleScene, and the MainScene to make the player move with control.
+
+
+
 ## Getting Started
 
 To run this project locally, make sure you have the following installed:
@@ -23,8 +33,7 @@ To run this project locally, make sure you have the following installed:
 - Node.js, more information [here](https://nodejs.org/en/)
 - Yarn package manager, more information [here](https://yarnpkg.com/)
 
-- To get a local copy up and running follow these simple example steps.
-On your terminal, run 
+- To get a local copy up and running, on your terminal, run 
 ```
  git clone https://github.com/Nasa28/Shooter-Game.git
 
@@ -34,11 +43,20 @@ On your terminal, run
 
 - cd into the project
 - open the project using code editor of your choice
-- Run `yarn` to set up all dependencies
+- Run `yarn install` to set up all dependencies
 - Run `yarn start` to start the server
 - Open your prefered browser
 - Visit `http://localhost:8080/`
 
+
+## Run Tests
+
+In the project root folder run
+
+```
+yarn run test
+
+```
 
 ## How to play
 - Open the game
