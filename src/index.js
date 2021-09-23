@@ -9,7 +9,7 @@ import SceneGameOver from './Scenes/SceneGameOver';
 import LeaderBoard from './Scenes/LeaderBoard';
 import './assets/css/styles.css';
 
-const config = {
+export const config = {
   type: Phaser.WEBGL,
   width: 600,
   height: 640,

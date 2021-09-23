@@ -17,6 +17,13 @@
 - Jest
 
 ## Design Process
+  Before the beginning of day 2, I have already;
+
+ * Learned and understood the Phaser framework necessary for the project due to the project's tight deadline. 
+
+ * Learn and practiced setting up Webpack with phaser that is necessary for the bundling of the project dependencies.
+
+ * Gathered and arranged all the necessary assets (images, sprites, sounds, etc.)for the game. All the assets were gotten from open game art and used in compliance with the assets license agreement. 
 
   At the end of day 2, I had some objectives going into day three;
 
